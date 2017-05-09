@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div{
+		position: absolute;
+		width:50px;
+		height:50px;
+		line-height: 50px;
+		text-align: center;
+		top:0;
+		left:0;
+		background: #f00;
+	}
+	</style>
+<!-- 	<script>
+		window.onload=function(){
+			var aDiv=document.getElementsByTagName('div');
+			var str='';
+			for(var i=0;i<11;i++){
+				str+='<div>'+i+'</div>';
+			}
+			document.body.innerHTML=str;
+			for(var i=0;i<aDiv.length;i++){
+				if(i<aDiv.length/2){
+					aDiv[i].style.left=i*50+'px';
+				    aDiv[i].style.top=i*20+'px';
+				}else{
+					aDiv[i].style.left=i*50+'px';
+				    aDiv[i].style.top=(aDiv.length-1-i)*20+'px';
+		        }
+		    }		
+		};
+	</script> -->
+<!-- 	<script>
+		window.onload=function(){
+			var str='';
+			var aDiv=document.getElementsByTagName('div');
+			for(var i=0;i<9;i++){
+				str+='<div>'+i+'</div>';
+			}
+			document.body.innerHTML=str;
+			for(var i=0;i<aDiv.length;i++){
+				aDiv[i].style.top=parseInt(i/3)*51+'px';
+				aDiv[i].style.left=i%3*51+'px';
+			}
+		};
+	</script> -->
+   <!--  <script>
+		window.onload=function(){
+			var arr=[[1,2,3],[4,5,6],[7,8,9]];
+			alert(arr[1][1]);
+			alert(arr[1]);
+		};
+	</script> -->
+	<script>
+		function fn(){
+			alert(this);
+		}
+		// fn();
+		// window.onload=function(){
+		// 	fn();
+		// }
+	</script>
+</head>
+<body>
+	<!-- <div>aaaa</div> -->
+	<input id='bn1' type="button" value="按钮">
+	<input id='button' type="button" onclick="alert(this);" value="按钮">
+	<input id='bn2' type="button" onclick="fn();" value="按钮">
+	<script>
+		var oBtn1=document.getElementById('bn1');
+		//oBtn1.onclick=fn();//直接执行，按钮不好使
+		//oBtn1.onclick=fn;//按钮调用fn方法
+		oBtn1.onclick=function(){
+			fn(this);
+		};
+	</script>
+</body>
+</html>

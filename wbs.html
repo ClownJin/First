@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+	function Myclick1(){
+			// var uesrname=$("#txtUserName").val();
+			// var password=$("#txtPwd").val();
+			localStorage.setItem("k_uesrname",uesrname);
+			localStorage.setItem("k_password",password);
+			alert("成功");
+	}
+</script>
+
+</head>
+
+
+
+<body>
+<input type="text" id="txtUserName">
+<input type="password" id ="txtPwd">
+<input type="button" value="按钮1" onclick="Myclick1()" >
+<input type="button" value="按钮2">
+	
+</body>
+</html>

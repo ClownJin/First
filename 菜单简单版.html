@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    *{
+    	margin: 0;
+    	padding: 0;
+    }
+    a{
+    	text-decoration: none;
+    }
+    ul{
+    	padding: 8px 1.5px;
+    	background: #968f7e;
+    }
+    li{
+    	width: 60px;
+    	height: 20px;
+    	list-style: none;
+    	display: inline-block;
+    	text-align: center;
+    	line-height: 20px;
+    	
+    }
+    .content{
+    	margin: 100px auto;
+        width: 400px;
+        height: 150px;
+        border: 1px solid #bab3b2;
+
+    }
+    .active{
+        transform: scale(1.1,1.1);
+        transition: transform 0.5s;
+        border: 1px solid #69c;
+    	background-color: #69c;
+    	border-radius: 10px;
+    }
+    .list{
+    	width: 280px;
+    	border-radius: 20px;
+    	position: relative;
+    }
+    .list::after{
+		content: "";
+		width: 0;
+		height: 0;
+		top: -18px;
+		border: 15px solid;
+    	position: absolute;
+		border-color: transparent transparent #968f7e transparent;
+    }
+    .ul1{
+    	margin-left: 10px;
+    	/*display: none;*/
+    }
+    .ul2{
+    	margin-left: 60px;
+    	display: none;
+    }
+    .ul3{
+        margin-left: 100px;
+        display: none;
+    }
+    .ul1::after,.ul2::after{
+        left: 80px;
+    }
+    .ul3::after{
+    	left: 110px;
+    }
+    hr{
+    	height: 2px;
+    	background: #9fd6c2;
+    }
+	</style>
+	<script>
+		window.onload=function(){
+			var content=document.getElementById('content');
+			var nav=document.getElementById('nav');
+			var aDiv=content.getElementsByTagName('div');
+			var aLi=nav.getElementsByTagName('li');
+
+			for(var i;i<aLi.length;i++){
+				aLi[i].onclick=function(){
+                    alert(1);
+				};
+			}
+		};
+	</script>
+</head>
+<body>
+	<div class="content" id="content">
+		<ul id="nav">
+			<li><a href="#">&nbsp;</a></li>
+			<li class="active"><a href="#">拉啊拉</a></li>
+			<li><a href="#">啦啦啦</a></li>
+			<li><a href="#">会卡</a></li>
+			<li><a href="#">蒂法</a></li>
+			<li><a href="#">&nbsp;</a></li>
+		</ul>
+		<hr>
+		<div>
+			<ul class="list ul1">
+				<li><a href="#">拉啊拉</a></li>
+				<li><a href="#">啦啦啦</a></li>
+			</ul>
+		</div>
+		<div>
+			<ul class="list ul2">
+				<li><a href="#">拉啊拉</a></li>
+				<li><a href="#">啦啦啦</a></li>
+				<li><a href="#">会卡</a></li>
+				<li><a href="#">蒂法</a></li>
+			</ul>
+		</div>
+		<div>
+			<ul class="list ul3">
+				<li><a href="#">拉啊拉</a></li>
+				<li><a href="#">啦啦啦</a></li>
+				<li><a href="#">会卡</a></li>
+				<li><a href="#">蒂法</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
